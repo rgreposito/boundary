@@ -3,6 +3,16 @@
 **A policy gate between an AI agent’s intent and a tool’s side effects.**
 
 [![Checks](https://github.com/rgreposito/boundary/actions/workflows/checks.yml/badge.svg)](https://github.com/rgreposito/boundary/actions/workflows/checks.yml)
+![Python 3.11–3.13](https://img.shields.io/badge/python-3.11%E2%80%933.13-3776AB)
+![Runtime dependencies: 0](https://img.shields.io/badge/runtime%20deps-0-2ea44f)
+![License](https://img.shields.io/github/license/rgreposito/boundary)
+
+| In 30 seconds | |
+| --- | --- |
+| **Problem** | AI agents can propose high-impact actions; nothing should let them approve their own. |
+| **Approach** | Ordered fail-closed policy, action-bound single-use human approval, locked execution reservation, hash-linked audit. |
+| **Evidence** | 28 tests (replay, expiry, mutation, concurrency, failure), CI on 3 Python versions, threat model, ADRs, runbook. |
+| **Honest scope** | Single-process reference and a local console simulation — limits are documented, not hidden. |
 
 An agent can suggest isolating an endpoint. It should not be able to grant itself
 that authority. Boundary explores this distinction with a small executable
@@ -21,6 +31,8 @@ cd reference
 python -m boundary
 python -m unittest discover -s tests -v
 ```
+
+Or from the root: `make demo`, `make test`, `make console`.
 
 Python 3.11+ is sufficient. The exercise evaluates a permitted read, a denied
 cross-tenant request, and a containment action approved by an independent
@@ -79,6 +91,7 @@ an unauthenticated endpoint.
 ## Read the decisions, not just the code
 
 - [Architecture and trade-offs](docs/architecture.md)
+- [Architecture decision records](docs/adr/README.md)
 - [Threat model and limitations](docs/threat-model.md)
 - [Delivery plan and operating model](docs/delivery.md)
 - [Failure reconciliation runbook](docs/runbook.md)
