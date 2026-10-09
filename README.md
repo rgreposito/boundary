@@ -2,6 +2,8 @@
 
 **A policy gate between an AI agent’s intent and a tool’s side effects.**
 
+[![Checks](https://github.com/rgreposito/boundary/actions/workflows/checks.yml/badge.svg)](https://github.com/rgreposito/boundary/actions/workflows/checks.yml)
+
 An agent can suggest isolating an endpoint. It should not be able to grant itself
 that authority. Boundary explores this distinction with a small executable
 reference, rather than a framework with a security promise attached.
@@ -9,6 +11,8 @@ reference, rather than a framework with a security promise attached.
 The project pairs a dependency-free Python gate with a TypeScript operator
 console. The console is a **local simulation**, not a deployed security service.
 No model keys, cloud account or customer data are required.
+
+![Boundary operator console](docs/console.png)
 
 ## Try it in two minutes
 
