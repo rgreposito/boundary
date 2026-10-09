@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.output/
+.tanstack/
+.nitro/
+.wrangler/
+.env
+.env.*
+*.local
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.tsbuildinfo
+.DS_Store
